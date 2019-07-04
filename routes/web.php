@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
+	if (Auth::check()) {
+		return redirect(backpack_url('dashboard'));
+	} else {
+		return redirect(backpack_url('login'));
+	}
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
