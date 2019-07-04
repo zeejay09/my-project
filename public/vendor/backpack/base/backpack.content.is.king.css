@@ -28,10 +28,16 @@ body[class^='skin-'] .sidebar-menu>li>a {
 .content-header>.breadcrumb {
 	top: 5px;
 }
+/*
+ * Custom CSS
+ */
 .user-panel {
 	padding: 20px 10px 20px 10px;
+	height: 190px;
 }
-
+/*
+ * End of Custom CSS
+ */
 .btn {
 	border: none;
 }
