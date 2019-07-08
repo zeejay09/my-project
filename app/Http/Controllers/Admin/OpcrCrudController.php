@@ -26,25 +26,28 @@ class OpcrCrudController extends CrudController
         $this->crud->setModel('App\Models\Opcr');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/opcr');
         $this->crud->setEntityNameStrings('opcr', 'Office Performance Commitment Review');
-
+        
         /*
         |--------------------------------------------------------------------------
         | CrudPanel Configuration
         |--------------------------------------------------------------------------
         */
 
+        //Custom View
+        //$this->crud->setCreateView('your-view')
+
         // TODO: remove setFromDb() and manually define Fields and Columns
         //$this->crud->setFromDb();
 
         // Columns
-        $this->crud->addColumn(['name' => 'output', 'type' => 'textarea', 'label' => 'Output']);
-        $this->crud->addColumn(['name' => 'success_indicator', 'type' => 'textarea', 'label' => 'Success Indicator']);
-        $this->crud->addColumn(['name' => 'actual_accomplishment', 'type' => 'textarea', 'label' => 'Actual Accomplishment']);
+        $this->crud->addColumn(['name' => 'output', 'type' => 'ckeditor', 'label' => 'Output']);
+        $this->crud->addColumn(['name' => 'success_indicator', 'type' => 'ckeditor', 'label' => 'Success Indicator']);
+        $this->crud->addColumn(['name' => 'actual_accomplishment', 'type' => 'ckeditor', 'label' => 'Actual Accomplishment']);
 
         // Fields
-        $this->crud->addField(['name' => 'output', 'type' => 'textarea', 'label' => 'Output']);
-        $this->crud->addField(['name' => 'success_indicator', 'type' => 'textarea', 'label' => 'Success Indicator']);
-        $this->crud->addField(['name' => 'actual_accomplishment', 'type' => 'textarea', 'label' => 'Actual Accomplishment']);
+        $this->crud->addField(['name' => 'output', 'type' => 'ckeditor', 'label' => 'Output']);
+        $this->crud->addField(['name' => 'success_indicator', 'type' => 'ckeditor', 'label' => 'Success Indicator']);
+        $this->crud->addField(['name' => 'actual_accomplishment', 'type' => 'ckeditor', 'label' => 'Actual Accomplishment']);
 
         // add asterisk for fields that are required in OpcrRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');

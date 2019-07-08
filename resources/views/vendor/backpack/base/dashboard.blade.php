@@ -6,7 +6,7 @@
         {{ trans('backpack::base.dashboard') }}<small>{{ trans('backpack::base.first_page_you_see') }}</small>
       </h1> -->
       <h1>
-        <strong>Strategic Performance Management System</strong><small>SPMS</small>
+        Strategic Performance Management System<small>SPMS</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{ backpack_url() }}">{{ config('backpack.base.project_name') }}</a></li>

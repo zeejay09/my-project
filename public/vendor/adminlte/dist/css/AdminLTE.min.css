@@ -139,11 +139,11 @@ body {
 /* Content */
 .content {
   min-height: 250px;
-  padding: 15px;
+  /*padding: 15px;*/
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 30px;
+  /*padding-right: 15px;*/
 }
 /* H1 - H6 font */
 h1,
@@ -1562,7 +1562,8 @@ a:focus {
   border-top-color: #00a65a;
 }
 .box.box-default {
-  border-top-color: #d2d6de;
+  border-top-color: #ceccc8;
+  padding-top: 10px;
 }
 .box.collapsed-box .box-body,
 .box.collapsed-box .box-footer {
@@ -2661,6 +2662,7 @@ a:focus {
 }
 .table > thead > tr > th {
   border-bottom: 2px solid #f4f4f4;
+  background-color: #f7f4ed;
 }
 .table tr td .progress {
   margin-top: 5px;

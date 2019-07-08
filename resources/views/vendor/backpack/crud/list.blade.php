@@ -4,7 +4,8 @@
 	<section class="content-header">
 	  <h1>
       <span class="text-capitalize">{!! $crud->getHeading() ?? $crud->entity_name_plural !!}</span>
-      <small id="datatable_info_stack">{!! $crud->getSubheading() ?? trans('backpack::crud.all').'<span>'.$crud->entity_name_plural.'</span> '.trans('backpack::crud.in_the_database') !!}.</small>
+      <small style="text-transform: uppercase;">{!! $crud->getSubheading() ?? ' '.$crud->entity_name !!}</small>
+      <!-- <small id="datatable_info_stack">{!! $crud->getSubheading() ?? trans('backpack::crud.all').'<span>'.$crud->entity_name_plural.'</span> '.trans('backpack::crud.in_the_database') !!}.</small> -->
 	  </h1>
 	  <ol class="breadcrumb">
 	    <li><a href="{{ url(config('backpack.base.route_prefix'), 'dashboard') }}">{{ trans('backpack::crud.admin') }}</a></li>
@@ -16,7 +17,7 @@
 
 @section('content')
 <!-- Default box -->
-  <div class="row">
+  <div class="box box-default row">
 
     <!-- THE ACTUAL CONTENT -->
     <div class="{{ $crud->getListContentClass() }}">
@@ -31,6 +32,7 @@
 
             </div>
             @endif
+            <!-- <div style="margin-top: 10px" id="datatable_search_stack" class="pull-left"></div> -->
           </div>
           <div class="col-xs-6">
               <div id="datatable_search_stack" class="pull-right"></div>
@@ -42,9 +44,9 @@
           @include('crud::inc.filters_navbar')
         @endif
 
-        <div class="overflow-hidden">
+        <div class="overflow-hidden table-responsive">
 
-        <table id="crudTable" class="box table table-striped table-hover display responsive nowrap m-t-0" cellspacing="0">
+        <table id="crudTable" class="box table table-condensed table-bordered nowrap m-t-0" cellspacing="0">
             <thead>
               <tr>
                 {{-- Table columns --}}
@@ -67,7 +69,7 @@
             </thead>
             <tbody>
             </tbody>
-            <tfoot>
+            <!-- <tfoot>
               <tr>
                 {{-- Table columns --}}
                 @foreach ($crud->columns as $column)
@@ -78,7 +80,7 @@
                   <th>{{ trans('backpack::crud.actions') }}</th>
                 @endif
               </tr>
-            </tfoot>
+            </tfoot> -->
           </table>
 
           @if ( $crud->buttons->where('stack', 'bottom')->count() )

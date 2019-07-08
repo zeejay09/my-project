@@ -19,7 +19,7 @@ body[class^='skin-'] .sidebar-menu>li>a {
 }
 
 .content-header {
-	padding: 35px 15px 0px 15px;
+	padding: 15px 15px 15px 15px;
 }
 .content-header>h1 {
 	font-size: 32px;
@@ -53,10 +53,11 @@ body {
 .box {
 	margin-bottom: 20px;
     background-color: #fff;
-    border: 1px solid transparent;
+    /*border: 1px solid transparent;*/
+    border-top: 3px solid #d2d6de;
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    /*box-shadow: 0 1px 1px rgba(0,0,0,.5);*/
 }
 
 .logo-lg b {
@@ -87,5 +88,7 @@ body {
 }
 
 #crudTable_filter input {
-	border: none;
+	/*border: none;*/
+	border-radius: 0px;
+	background-color: #fcfcfc;
 }
